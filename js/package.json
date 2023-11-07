@@ -1,0 +1,25 @@
+{
+  "name": "%APPSLUG%",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/archetype-org/create-bos-app#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archetype-org/create-bos-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/archetype-org/create-bos-app/issues"
+  },
+  "scripts": {
+    "build": "bos-workspace build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  }
+}
