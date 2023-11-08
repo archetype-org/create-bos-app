@@ -15,5 +15,8 @@
     "prompts": "^2.4.2",
     "replace-in-file": "^4.1.1",
     "slugify": "^1.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
   }
 }

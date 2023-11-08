@@ -38,12 +38,14 @@ async function main() {
 
     const prefixPath = p => path.join(dir, p);
 
-    await fs.rename("apps/%APPNAME%", `apps/${name}`, callback);
+    await mvdir(path.join(__dirname, codebase), dir, { copy: true });
+    await mvdir(path.join(dir, "/apps/%APPNAME%"), path.join(dir, `/apps/${name}`));
+
     await replace({
       files: [
         "README.md",
         "bos.config.json",
-        `apps/${name}/app.${ts ? "tsx" : "jsx"}`,
+        `apps/${name}/widget/app.${ts ? "tsx" : "jsx"}`,
       ].map(prefixPath),
       from: /%APPNAME%/g,
       to: name,
@@ -51,13 +53,14 @@ async function main() {
 
     await replace({
       files: ["README.md", "bos.config.json", "package.json"].map(prefixPath),
-      from: /%APPSLUG%/g,
+      from: /%APPNAME%/g,
       to: slug,
     });
 
     console.log(`All done, switch to the "${res.dir || slug}" directory to get started.`);
     console.log("Be the BOS!");
   } catch (err) {
+    console.error(err);
     console.log(
       `Something went wrong when generating your app. You may need to delete the folder at ${dir}`
     );
