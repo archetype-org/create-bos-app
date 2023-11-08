@@ -1,7 +1,5 @@
 # %APPNAME%
 
-# editor
-
 ## Getting Started
 
 To run locally, make sure you have [bos-workspace](https://github.com/sekaiking/bos-workspace) installed.

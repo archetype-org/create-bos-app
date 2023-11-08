@@ -4,12 +4,13 @@
   "description": "Get started with a BOS application.",
   "main": "node install.js",
   "bin": "install.js",
-  "scripts": {
-    "start": "node install.js"
-  },
   "author": "Archetype",
   "license": "MIT",
   "repository": "https://github.com/archetype-org/create-bos-app",
+  "scripts": {
+    "start": "node install.js",
+    "postpublish": "git push --follow-tags origin master && npm publish"
+  },
   "dependencies": {
     "mvdir": "^1.0.21",
     "prompts": "^2.4.2",
