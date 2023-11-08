@@ -1,6 +1,6 @@
 {
   "name": "@archetype-org/create-bos-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Get started with a BOS application.",
   "main": "node install.js",
   "bin": "install.js",
@@ -9,7 +9,7 @@
   "repository": "https://github.com/archetype-org/create-bos-app",
   "scripts": {
     "start": "node install.js",
-    "postpublish": "git push --follow-tags origin master && npm publish"
+    "postpublish": "git push --follow-tags origin master"
   },
   "dependencies": {
     "mvdir": "^1.0.21",
