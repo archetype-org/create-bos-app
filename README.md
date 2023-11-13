@@ -1,6 +1,8 @@
 
 ## Install
-`pnpm add -g @archetype-org/create-bos-app`
+```bash
+pnpm add -g @archetype-org/create-bos-app`
+```
 
 ## Usage
 After installing globally, simply run the CLI to kickstart your new BOS app or widget:
