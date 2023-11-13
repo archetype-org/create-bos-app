@@ -1,7 +1,7 @@
 
 ## Install
 ```bash
-pnpm add -g @archetype-org/create-bos-app`
+pnpm add -g @archetype-org/create-bos-app
 ```
 
 ## Usage
