@@ -35,7 +35,7 @@ async function main() {
   try {
     await mvdir(path.join(__dirname, codebase), dir, { copy: true });
     await mvdir(path.join(dir, "_gitignore"), path.join(dir, ".gitignore"));
-
+    
     const prefixPath = p => path.join(dir, p);
 
     await mvdir(path.join(__dirname, codebase), dir, { copy: true });
@@ -44,7 +44,7 @@ async function main() {
     await replace({
       files: [
         "README.md",
-        "bos.config.json",
+        `apps/${name}/bos.config.json`,
         `apps/${name}/widget/app.${ts ? "tsx" : "jsx"}`,
       ].map(prefixPath),
       from: /%APPNAME%/g,
@@ -52,7 +52,7 @@ async function main() {
     });
 
     await replace({
-      files: ["README.md", "bos.config.json", "package.json"].map(prefixPath),
+      files: ["README.md", `apps/${name}/bos.config.json`, "package.json"].map(prefixPath),
       from: /%APPNAME%/g,
       to: slug,
     });

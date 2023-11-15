@@ -4,14 +4,6 @@
   "description": "",
   "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/archetype-org/create-bos-app#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/archetype-org/create-bos-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/archetype-org/create-bos-app/issues"
-  },
   "scripts": {
     "build": "bos-workspace build"
   },
