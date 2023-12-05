@@ -2,18 +2,12 @@
 
 ## Getting Started
 
-```
-npm install
-```
+To run locally, make sure you have [bos-workspace](https://github.com/sekaiking/bos-workspace) installed.
 
 Then, run the command:
 
-```
-npm run dev
+```bash
+bw dev
 ```
 
 This will serve the widgets from `http://127.0.0.1:4040/`.
-
-Go to [everything.dev/flags](https://everything.dev) and paste this value there.
-
-Once set, see the locally served app at [%APPNAME%.near/widget/app](https://everything.dev/%APPNAME%.near/widget/app).
