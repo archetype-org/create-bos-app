@@ -5,10 +5,10 @@
   "author": "",
   "license": "MIT",
   "scripts": {
+    "dev": "bos-workspace dev",
     "build": "bos-workspace build"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "devDependencies": {
+    "bos-workspace": "^0.0.1-alpha.2"
   }
 }
