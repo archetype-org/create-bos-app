@@ -1,6 +1,6 @@
 {
   "name": "@archetype-org/create-bos-app",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Get started with a BOS application.",
   "main": "node install.js",
   "bin": "install.js",
