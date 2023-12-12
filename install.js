@@ -19,9 +19,10 @@ async function main() {
       message: "What should we call your BOS application?",
     },
     {
-      type: async prev => ((await hasDirectory(getDir(prev))) ? "text" : null),
+      type: async (prev) =>
+        (await hasDirectory(getDir(prev))) ? "text" : null,
       name: "dir",
-      message: async prev =>
+      message: async (prev) =>
         `Looks like a directory already exists called "${slugify(prev, {
           lower: true,
         })}". Where should your app be placed instead?`,
@@ -35,29 +36,39 @@ async function main() {
   try {
     await mvdir(path.join(__dirname, codebase), dir, { copy: true });
     await mvdir(path.join(dir, "_gitignore"), path.join(dir, ".gitignore"));
-    
-    const prefixPath = p => path.join(dir, p);
+
+    await mvdir(path.join(dir, "_github"), path.join(dir, ".github"));
+
+    const prefixPath = (p) => path.join(dir, p);
 
     await mvdir(path.join(__dirname, codebase), dir, { copy: true });
-    await mvdir(path.join(dir, "/apps/%APPNAME%"), path.join(dir, `/apps/${name}`));
+    await mvdir(
+      path.join(dir, "/apps/%APPNAME%"),
+      path.join(dir, `/apps/${name}`)
+    );
 
     await replace({
       files: [
         "README.md",
         `apps/${name}/bos.config.json`,
         `apps/${name}/widget/app.${ts ? "tsx" : "jsx"}`,
+        `.github/workflows/release.yml`,
       ].map(prefixPath),
       from: /%APPNAME%/g,
       to: name,
     });
 
     await replace({
-      files: ["README.md", `apps/${name}/bos.config.json`, "package.json"].map(prefixPath),
+      files: ["README.md", `apps/${name}/bos.config.json`, "package.json"].map(
+        prefixPath
+      ),
       from: /%APPNAME%/g,
       to: slug,
     });
 
-    console.log(`All done, switch to the "${res.dir || slug}" directory to get started.`);
+    console.log(
+      `All done, switch to the "${res.dir || slug}" directory to get started.`
+    );
     console.log("Be the BOS!");
   } catch (err) {
     console.error(err);
